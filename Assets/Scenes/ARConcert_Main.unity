@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTrackableName: StageTarget_Normal_Extended
-  mPreviousScale: {x: 7, y: 7, z: 7}
+  mPreviousScale: {x: 5, y: 5, z: 5}
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: '--- EMPTY ---'
