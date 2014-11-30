@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Qualcomm.Vuforia.UnityExtensions.Editor</name>
+  </assembly>
+  <members>
+    <member name="T:SurfaceEditor">
+      <summary>
+            Editor for Surfaces
+            </summary>
+    </member>
+    <member name="M:SurfaceEditor.OnEnable">
+      <summary>
+            Initializes the Smart Terrain Object when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:SurfaceEditor.OnInspectorGUI">
+      <summary>
+            Draws the inspector for the surface
+            </summary>
+    </member>
+    <member name="T:MTRenderingChecker">
+      <summary>
+            Vuforia does not yet support multithreaded rendering on mobile platforms as introduced with Unity 4.3.
+            On previous Unity versions, including 4.2, PlayerSettings.MTRendering would return true even though not available on mobile platforms.
+            This editor class checks for the editor setting and logs an error if it is set.
+            </summary>
+    </member>
+    <member name="T:CloudRecoEditor">
+      <summary>
+            Editor for the CloudRecoBehaviour
+            </summary>
+    </member>
+    <member name="M:CloudRecoEditor.OnInspectorGUI">
+      <summary>
+            Draws a custom UI for the cloud reco behaviour inspector
+            </summary>
+    </member>
+    <member name="M:CloudRecoEditor.OnSceneGUI">
+      <summary>
+            Renders a label to visualize the CloudRecoBehaviour
+            </summary>
+    </member>
+    <member name="T:CylinderTargetEditor">
+      <summary>
+            Editor for the CylinderTargetBehaviour
+            </summary>
+    </member>
+    <member name="M:CylinderTargetEditor.OnEnable">
+      <summary>
+            Initializes the Cylinder Target when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:CylinderTargetEditor.OnInspectorGUI">
+      <summary>
+            Lets the user choose a Cylinder Target from a drop down list. Cylinder Target
+            must be defined in the "config.xml" file.
+            </summary>
+    </member>
+    <member name="T:DataSetLoadEditor">
+      <summary>
+            Editor for the DataSetLoadBehaviour
+            </summary>
+    </member>
+    <member name="M:DataSetLoadEditor.OnEnable">
+      <summary>
+            Called when the ARCamera is instantiated in the scene
+            </summary>
+    </member>
+    <member name="M:DataSetLoadEditor.OnInspectorGUI">
+      <summary>
+            Draws the DataSetLoadBehaviour inspector
+            </summary>
+    </member>
+    <member name="T:DataSetToTrackableMenu">
+      <summary>
+            Custom Unity Menu to Apply Dataset properties from the XML file to scene objects
+            </summary>
+    </member>
+    <member name="M:DataSetToTrackableMenu.ApplyDataSetProperties">
+      <summary>
+            Custom Unity menu option to Apply Dataset properties from the XML file to scene objects
+            </summary>
+    </member>
+    <member name="T:ImageTargetEditor">
+      <summary>
+            Editor for ImageTargetBehaviours
+            </summary>
+    </member>
+    <member name="M:ImageTargetEditor.OnEnable">
+      <summary>
+            Initializes the Image Target when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:ImageTargetEditor.OnInspectorGUI">
+      <summary>
+            Lets the user choose a Image Target from a drop down list. Image Target
+            must be defined in the "config.xml" file.
+            </summary>
+    </member>
+    <member name="T:IUnzipper">
+      <summary>
+            Interface providing means to unzip a package and return back a file stream of a specific file within this package
+            </summary>
+    </member>
+    <member name="M:IUnzipper.UnzipFile(System.String,System.String)">
+      <summary>
+            Unzips a file in a package at a given path and returns a stream to that file.
+            </summary>
+      <param name="path">
+      </param>
+      <param name="fileNameinZip">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:KeepAliveEditor">
+      <summary>
+            Editor for the KeepAliveAbstractBehaviour
+            </summary>
+    </member>
+    <member name="M:KeepAliveEditor.OnInspectorGUI">
+      <summary>
+            Draws check boxes to keep various objects alive on scene change
+            </summary>
+    </member>
+    <member name="T:MarkerEditor">
+      <summary>
+            Editor for MarkerBehaviours
+            </summary>
+    </member>
+    <member name="M:MarkerEditor.OnEnable">
+      <summary>
+            Initializes the Marker when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:MarkerEditor.OnInspectorGUI">
+      <summary>
+            Lets the user choose a Marker by specifying an ID.
+            </summary>
+    </member>
+    <member name="T:MultiTargetEditor">
+      <summary>
+            Editor for MultiTargetBehaviours
+            </summary>
+    </member>
+    <member name="M:MultiTargetEditor.OnEnable">
+      <summary>
+            Initializes the Multi Target when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:MultiTargetEditor.OnSceneGUI">
+      <summary>
+            Checks if the transformation of the Multi Target has been changed by
+            Unity transform-handles in scene view.
+            This is also called when user changes attributes in Inspector.
+            </summary>
+    </member>
+    <member name="M:MultiTargetEditor.OnInspectorGUI">
+      <summary>
+            Lets the user choose a Multi Target from a drop down list. Multi Target
+            must be defined in the "config.xml" file.
+            </summary>
+    </member>
+    <member name="T:AndroidManifestOrientationSetter">
+      <summary>
+            This class works around a change in Unity 4.2 that does no longer apply orientation settings selected in the Unity editor 
+            </summary>
+    </member>
+    <member name="T:QCARHelpMenu">
+      <summary>
+            Displays various help menu options in the Unity menu
+            </summary>
+    </member>
+    <member name="M:QCARHelpMenu.browseQCARHelp">
+      <summary>
+            Method opens up a browser Window with the specified URL.
+            This method is called when "Vuforia Documentation" is chosen from the
+            Unity "Help" menu.
+            </summary>
+    </member>
+    <member name="M:QCARHelpMenu.browseQCARReleaseNotes">
+      <summary>
+            Method opens up a browser Window with the specified URL.
+            This method is called when "Release Notes" is chosen from the
+            Unity "Help" menu.
+            </summary>
+    </member>
+    <member name="T:SetBGCameraLayerEditor">
+      <summary>
+            Editor for the SetBGCameraLayerBehaviour
+            </summary>
+    </member>
+    <member name="M:SetBGCameraLayerEditor.OnInspectorGUI">
+      <summary>
+            Renders the inspector to configure the bg layer behaviour
+            </summary>
+    </member>
+    <member name="T:SmartTerrainEditor">
+      <summary>
+            Editor for the SmartTerrainBehaviour
+            </summary>
+    </member>
+    <member name="M:SmartTerrainEditor.OnEnable">
+      <summary>
+            Initializes the Smart Terrain when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:SmartTerrainEditor.OnSceneGUI">
+      <summary>
+            This method checks for the scale of the SmartTerrainObject and resets it if it's not 1,1,1
+            </summary>
+    </member>
+    <member name="M:SmartTerrainEditor.OnInspectorGUI">
+      <summary>
+            Draws the inspector for the smart terrain prefab
+            </summary>
+    </member>
+    <member name="T:PropEditor">
+      <summary>
+            Editor for Props
+            </summary>
+    </member>
+    <member name="M:PropEditor.OnEnable">
+      <summary>
+            Initializes the Smart Terrain Object when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:PropEditor.OnInspectorGUI">
+      <summary>
+            Draws the inspector for the prop
+            </summary>
+    </member>
+    <member name="T:TextRecoEditor">
+      <summary>
+            Editor for the TextRecoBehaviour
+            </summary>
+    </member>
+    <member name="M:TextRecoEditor.OnEnable">
+      <summary>
+            Executed new TextRecoBehaviour is instantiated in the scene
+            </summary>
+    </member>
+    <member name="M:TextRecoEditor.OnInspectorGUI">
+      <summary>
+            Draws a custom UI for the text reco behaviour inspector
+            </summary>
+    </member>
+    <member name="M:TextRecoEditor.OnSceneGUI">
+      <summary>
+            Renders a label to visualize the TextRecoBehaviour
+            </summary>
+    </member>
+    <member name="T:TrackerEditor">
+      <summary>
+            Editor of the QCARBehaviour
+            </summary>
+    </member>
+    <member name="M:TrackerEditor.OnInspectorGUI">
+      <summary>
+            OnInspectorGUI exposes public Tracker settings in Inspector
+            WorldCenterMode: Defines how the relative transformation that is returned
+                             by the QCAR Tracker is applied. Either the camera is
+                             moved in the scene with respect to a "world center" or
+                             all the targets are moved with respect to the camera.
+            </summary>
+    </member>
+    <member name="T:UnityPlayModeEditorUtility">
+      <summary>
+            This class implements to IPlayModeEditorUtility to provide various editor functionality (popups, reading xml files)
+            at play mode runtime without introducing a depenency on UnityEdtitor from runtime classes.
+            </summary>
+    </member>
+    <member name="M:UnityPlayModeEditorUtility.DisplayDialog(System.String,System.String,System.String)">
+      <summary>
+            Displays a popup dialog in the Unity editor
+            </summary>
+    </member>
+    <member name="M:UnityPlayModeEditorUtility.LoadAndParseWebcamProfiles(System.String)">
+      <summary>
+            Loads web cam profiles from an XML file at a given path and returns all of them
+            including the default profile
+            </summary>
+    </member>
+    <member name="M:UnityPlayModeEditorUtility.RestartPlayMode">
+      <summary>
+            Forces a restart of Play Mode in the Editor.
+            It is called when Unity re-compiles the scripts shortly after starting play mode.
+            </summary>
+    </member>
+    <member name="T:Unzipper">
+      <summary>
+            Singleton implementation for a helper calls that provides unzipping functionality
+            If no external IUnzipper implementation is registered, an internal null implementation is used
+            </summary>
+    </member>
+    <member name="P:Unzipper.Instance">
+      <summary>
+            Singleton accessor for Unzipper
+            </summary>
+    </member>
+    <member name="T:UserDefinedTargetBuilderEditor">
+      <summary>
+            Editor for the UserDefinedTargetBuildingBehaviour
+            </summary>
+    </member>
+    <member name="M:UserDefinedTargetBuilderEditor.OnInspectorGUI">
+      <summary>
+            Draws a custom UI for the UserDefinedTargetBehaviour inspector
+            </summary>
+    </member>
+    <member name="M:UserDefinedTargetBuilderEditor.OnSceneGUI">
+      <summary>
+            Renders a label to visualize the UserDefinedTargetBehaviour
+            </summary>
+    </member>
+    <member name="T:VirtualButtonEditor">
+      <summary>
+            Editor for the VirtualButtonBehaviour
+            </summary>
+    </member>
+    <member name="M:VirtualButtonEditor.OnEnable">
+      <summary>
+            Initializes the Virtual Button when it is drag-dropped into the scene.
+            </summary>
+    </member>
+    <member name="M:VirtualButtonEditor.OnInspectorGUI">
+      <summary>
+            Lets the user set sensitivity and name of a Virtual Button.
+            </summary>
+    </member>
+    <member name="M:VirtualButtonEditor.OnSceneGUI">
+      <summary>
+            Locks the y-scale of a Virtual Button at 1.
+            </summary>
+    </member>
+    <member name="T:WebCamEditor">
+      <summary>
+            Editor for the WebCamBehaviour
+            </summary>
+    </member>
+    <member name="M:WebCamEditor.OnEnable">
+      <summary>
+            Executed when the ARCamera is instantiated in the scene
+            </summary>
+    </member>
+    <member name="M:WebCamEditor.OnInspectorGUI">
+      <summary>
+            Draws the inspector for web cam selection and configuration
+            </summary>
+    </member>
+    <member name="T:WordEditor">
+      <summary>
+            Editor for WordBehaviours
+            </summary>
+    </member>
+    <member name="M:WordEditor.OnEnable">
+      <summary>
+            Initializes the Word-Behaviour when it is drag-dropped into the scene
+            </summary>
+    </member>
+    <member name="M:WordEditor.OnInspectorGUI">
+      <summary>
+            Draws the inspector for WordBehaviours
+            </summary>
+    </member>
+  </members>
+</doc>
