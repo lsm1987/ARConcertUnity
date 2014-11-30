@@ -38,7 +38,7 @@ public class MainSystem : MonoBehaviour
     // 테스트용 UI
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(200, 10, 200, 350), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(10, 10, 200, 350), GUI.skin.box);
         GUILayout.BeginVertical();
 
         if (GUILayout.Button("Normal", GUILayout.Height(50)))

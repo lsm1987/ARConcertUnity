@@ -10,23 +10,112 @@ public class Stage : MonoBehaviour
         get;
         private set;
     }
-    [SerializeField]
-    private GameObject prefabPawn;
-    public GameObject Pawn { get; private set; }
     private bool isVisible = true; // 보임 여부
+    public bool ignoreFastForward = true;
+    // 생성시킬 프리팹
+    public GameObject musicPlayerPrefab;
+    public GameObject[] prefabsNeedsActivation;
+    public GameObject[] prefabsOnTimeline;
+    public GameObject[] miscPrefabs;
+    // 프리팹으로부터 생성된 오브젝트
+    private GameObject musicPlayer;
+    private GameObject[] objectsNeedsActivation;
+    private GameObject[] objectsOnTimeline;
 
     private void Awake()
     {
         Trans = transform;
         
-        // 폰을 스테이지의 자식 오브젝트로 생성. 방향 주의
-        GameObject objPawn = Instantiate(prefabPawn, Vector3.zero, Quaternion.Euler(0.0f, 180.0f, 0.0f)) as GameObject;
-        objPawn.transform.parent = Trans;
-        Pawn = objPawn;
+        // 프리팹 생성
+        musicPlayer = (GameObject)Instantiate(musicPlayerPrefab);
+        
+        objectsNeedsActivation = new GameObject[prefabsNeedsActivation.Length];
+        for (var i = 0; i < prefabsNeedsActivation.Length; i++)
+        {
+            objectsNeedsActivation[i] = (GameObject)Instantiate(prefabsNeedsActivation[i]);
+        }
+
+        objectsOnTimeline = new GameObject[prefabsOnTimeline.Length];
+        for (var i = 0; i < prefabsOnTimeline.Length; i++)
+        {
+            objectsOnTimeline[i] = (GameObject)Instantiate(prefabsOnTimeline[i]);
+        }
+
+        foreach (var p in miscPrefabs)
+        {
+            Instantiate(p);
+        }
     }
 
     private void OnDestroy()
     {
+    }
+
+    public void StartMusic()
+    {
+        foreach (var source in musicPlayer.GetComponentsInChildren<AudioSource>())
+        {
+            source.Play();
+        }
+    }
+
+    public void ActivateProps()
+    {
+        foreach (var o in objectsNeedsActivation)
+        {
+            o.BroadcastMessage("ActivateProps");
+        }
+    }
+
+    public void SwitchCamera(int index)
+    {
+        // do nothing
+    }
+
+    public void StartAutoCameraChange()
+    {
+        // do nothing
+    }
+
+    public void StopAutoCameraChange()
+    {
+        // do nothing
+    }
+
+    public void FastForward(float second)
+    {
+        if (!ignoreFastForward)
+        {
+            FastForwardAnimator(GetComponent<Animator>(), second, 0);
+            foreach (var go in objectsOnTimeline)
+            {
+                foreach (var animator in go.GetComponentsInChildren<Animator>())
+                {
+                    FastForwardAnimator(animator, second, 0.5f);
+                }
+            }
+        }
+    }
+
+    private void FastForwardAnimator(Animator animator, float second, float crossfade)
+    {
+        for (var layer = 0; layer < animator.layerCount; layer++)
+        {
+            var info = animator.GetCurrentAnimatorStateInfo(layer);
+            if (crossfade > 0.0f)
+            {
+                animator.CrossFade(info.nameHash, crossfade / info.length, layer, info.normalizedTime + second / info.length);
+            }
+            else
+            {
+                animator.Play(info.nameHash, layer, info.normalizedTime + second / info.length);
+            }
+        }
+    }
+
+    public void EndPerformance()
+    {
+        Application.LoadLevel(0);
     }
 
     // 자식 오브젝트들(폰, 바닥, 부속품 등)의 보임 여부 지정
