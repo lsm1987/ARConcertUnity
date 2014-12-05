@@ -24,6 +24,10 @@ public class MainSystem : MonoBehaviour
     {
         get { return stage; }
     }
+    public bool HasStage
+    {
+        get { return stage != null; }
+    }
     private StageTargetType stageTargetType = StageTargetType.Normal; // 스테이지 생성시 지정한 타입
     [SerializeField]
     private StageTargetEventHandler stageTargetEventHandler;
@@ -35,6 +39,7 @@ public class MainSystem : MonoBehaviour
         SetState(State.NoTarget);
     }
 
+    /*
     // 테스트용 UI
     private void OnGUI()
     {
@@ -61,6 +66,7 @@ public class MainSystem : MonoBehaviour
         GUILayout.EndVertical();
         GUILayout.EndArea();
     }
+    */
 
     private void SetState(State paramState)
     {
@@ -110,19 +116,10 @@ public class MainSystem : MonoBehaviour
         SetState(State.Stage);
     }
 
-    // 스테이지 객체 삭제
+    // 무대 생성되면 함께 생성되는 오브젝트가 너무 많아, 무대 비우기는 씬 리로드로 처리
     public void ClearStage()
     {
-        Destroy(stage.gameObject);
-        stage = null;
-
-        if (stageTargetEventHandler != null)
-        {
-            stageTargetEventHandler.ClearTarget();
-        }
-        
-        SetStageTargetType(StageTargetType.Normal);
-        SetState(State.NoTarget);
+        Application.LoadLevel(0);
     }
 
     // 스테이지 상태 변경, 씬 오브젝트 정리
@@ -139,5 +136,15 @@ public class MainSystem : MonoBehaviour
         {
             stage.SetVisible(visible);
         }
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
     }
 }

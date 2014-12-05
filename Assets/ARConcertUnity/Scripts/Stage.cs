@@ -115,7 +115,7 @@ public class Stage : MonoBehaviour
 
     public void EndPerformance()
     {
-        Application.LoadLevel(0);
+        MainSystem.Instance.ClearStage();
     }
 
     // 자식 오브젝트들(폰, 바닥, 부속품 등)의 보임 여부 지정
