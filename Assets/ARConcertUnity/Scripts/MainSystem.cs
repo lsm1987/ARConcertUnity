@@ -35,6 +35,8 @@ public class MainSystem : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        UISystem uiSystem = FindObjectOfType<UISystem>();
+        uiSystem.Initialize();
 
         SetState(State.NoTarget);
     }
