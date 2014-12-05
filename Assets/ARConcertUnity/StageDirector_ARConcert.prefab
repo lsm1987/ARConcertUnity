@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2c5f9958d2e34418a5def1a3a24043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreFastForward: 0
-  musicPlayerPrefab: {fileID: 100000, guid: 39bd86fbfd582460b93cc1a020b2cf87, type: 2}
+  ignoreFastForward: 1
+  musicPlayerPrefab: {fileID: 100000, guid: 23bf113e497bc40608e6ed5624ebc82d, type: 2}
   prefabsNeedsActivation:
   - {fileID: 100270, guid: 89553a6737b77d24fbae3d53ee6b9f77, type: 2}
   prefabsOnTimeline:
