@@ -121,7 +121,7 @@ public class MainSystem : MonoBehaviour
     // 무대 생성되면 함께 생성되는 오브젝트가 너무 많아, 무대 비우기는 씬 리로드로 처리
     public void ClearStage()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel(1);
     }
 
     // 스테이지 상태 변경, 씬 오브젝트 정리
@@ -134,10 +134,13 @@ public class MainSystem : MonoBehaviour
     // 타겟 추적상태 변경 시
     public void OnTrackableStateChanged(bool visible)
     {
+        // 오브젝트들이 stage 하위에 생성되지 않을 수 있으므로 보임여부 변경하지 않음
+        /*
         if (stage != null)
         {
             stage.SetVisible(visible);
         }
+        */
     }
 
     public void QuitApplication()
