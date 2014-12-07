@@ -24,3 +24,5 @@ Enjoy augmented reality concert only for you!
 These contents are licensed under the [“Unity-Chan” License Terms and Conditions](http://unity-chan.com/download/license_en.html).
 
 You are allowed to use these contents only if you follow the [Character Use Guidelines](http://unity-chan.com/download/guideline_en.html) set by Unity Technologies Japan G.K., for the usage of its characters.
+
+Original Asset: [Unity-Chan "Candy Rock Star" Public Repository](https://github.com/unity3d-jp/unitychan-crs)
