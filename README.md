@@ -4,7 +4,6 @@ AR Concert with Unity Chan
 Enjoy augmented reality concert only for you!
 
 <h1>Usage</h1>
-==============
 
 1. Camera look floor side
 
@@ -13,11 +12,9 @@ Enjoy augmented reality concert only for you!
 3. Move camera to Unity Chan's face
 
 <h1>Download</h1>
-==============
 [APK release](https://github.com/lsm1987/ARConcertUnity/releases)
 
 <h1>Unity Chan License</h1>
-==============
 ![UnityChanLicenseLogo](http://unity-chan.com/images/imageLicenseLogo.png)
 
 These contents are licensed under the [“Unity-Chan” License Terms and Conditions](http://unity-chan.com/download/license_en.html).
