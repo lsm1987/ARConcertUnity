@@ -11,6 +11,8 @@ Useage:
 
 3. Move camera to Unity Chan's face
 
-<pre>
-<div><img src="http://unity-chan.com/images/imageLicenseLogo.png" alt="Unity-Chan License"><p>These contents are licensed under the <a href="http://unity-chan.com/download/license_en.html" target="_blank">“Unity-Chan” License Terms and Conditions</a>. You are allowed to use these contents only if you follow the <a href="http://unity-chan.com/download/guideline_en.html" target="_blank">Character Use Guidelines</a> set by Unity Technologies Japan G.K., for the usage of its characters.</p></div>
-</pre>
+![UnityChanLicenseLogo](http://unity-chan.com/images/imageLicenseLogo.png)
+
+These contents are licensed under the [“Unity-Chan” License Terms and Conditions](http://unity-chan.com/download/license_en.html).
+
+You are allowed to use these contents only if you follow the [Character Use Guidelines](http://unity-chan.com/download/guideline_en.html) set by Unity Technologies Japan G.K., for the usage of its characters.
