@@ -3,13 +3,17 @@ AR Concert with Unity Chan
 
 Enjoy augmented reality concert only for you!
 
+[Youtube](http://www.youtube.com/watch?v=DI23QLsRCyU)
+
 <h1>Usage</h1>
 
-1. Camera look floor side
+1. Prepare a any image to use as stage
 
-2. Create character by clilck 'Normal' or 'Large'
+2. Look camera to stage image floor side
 
-3. Move camera to Unity Chan's face
+3. Create character by click 'Normal' or 'Large'
+
+4. Move camera to Unity Chan's face
 
 <h1>Download</h1>
 [APK release](https://github.com/lsm1987/ARConcertUnity/releases)
